@@ -1,0 +1,6 @@
+{
+  "name": "JC's Workshop ZA",
+  "description": "South African automotive workshop management system featuring real-time inventory alerts, SARS PAYE & UIF payroll, quotations & invoices with PDF export, customer email dispatch with pre-filled mailto templates & portal instructions, job-by-job profitability dashboard, top-performing service rankings, Recharts vehicle mileage telemetry & maintenance frequency charts, SARS Section 29/30 cryptographic SHA-256 audit log, client portal, financial reporting, and SARS VAT201 & income tax compliance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

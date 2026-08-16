@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  workshop-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jcs-workshop-za
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+    restart: unless-stopped
+    volumes:
+      - .:/app
+      - /app/node_modules

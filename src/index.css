@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   SARS Compliant Professional A4 Invoice Print Media Stylesheet
+   ========================================================================== */
+
+@media print {
+  /* 1. Page Configuration: Strict A4 Portrait with standard margin boundaries */
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm 15mm 15mm;
+  }
+
+  /* 2. Global Document Reset */
+  html,
+  body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 10pt !important;
+    line-height: 1.35 !important;
+    height: auto !important;
+    min-height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  }
+
+  #root {
+    background: #ffffff !important;
+    height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  /* 3. Hide all Dashboard navigation, sidebar, top header bar, action buttons, alerts, and non-printable widgets */
+  nav,
+  aside,
+  header,
+  footer,
+  button,
+  input,
+  select,
+  textarea,
+  .no-print,
+  .print-hidden,
+  .sidebar,
+  .navbar,
+  .dashboard-header,
+  #dashboard-financial-trends-panel,
+  #daily-cash-register-panel,
+  #sars-deadline-notification-banner,
+  #topbar-new-invoice-btn,
+  #topbar-new-quote-btn {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* 4. Modal Container Transformations for Print: Remove dark backdrops, transforms, fixed bounds & scrollbars */
+  .fixed.inset-0,
+  .invoice-modal-backdrop {
+    position: static !important;
+    display: block !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .invoice-modal-container,
+  .fixed.inset-0 > div {
+    position: static !important;
+    display: block !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    max-height: none !important;
+    overflow: visible !important;
+    border-radius: 0 !important;
+  }
+
+  /* Hide modal title bar and control buttons */
+  .invoice-modal-header,
+  .modal-action-bar {
+    display: none !important;
+  }
+
+  /* 5. Printable Invoice Sheet Styling */
+  .printable-invoice-sheet {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-size: 9.5pt !important;
+  }
+
+  /* 6. Professional Table Layout for A4 Print */
+  .printable-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto !important;
+    margin-top: 10pt !important;
+    margin-bottom: 10pt !important;
+  }
+
+  .printable-table thead {
+    display: table-header-group !important;
+  }
+
+  .printable-table tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .printable-table th {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+    border-top: 1.5pt solid #475569 !important;
+    border-bottom: 1.5pt solid #475569 !important;
+    padding: 6pt 8pt !important;
+    font-weight: 700 !important;
+    font-size: 8.5pt !important;
+    text-transform: uppercase !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .printable-table td {
+    border-bottom: 0.5pt solid #cbd5e1 !important;
+    padding: 6pt 8pt !important;
+    color: #1e293b !important;
+    font-size: 9pt !important;
+  }
+
+  /* 7. Page Break Rules: Prevent breaks inside headers, summary boxes, bank details & signatures */
+  .avoid-page-break,
+  .invoice-header-section,
+  .invoice-customer-vehicle-grid,
+  .invoice-totals-summary,
+  .invoice-banking-terms,
+  .invoice-signatures-block {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* 8. Crisp Printable Borders and Accents */
+  .print-box {
+    border: 1pt solid #cbd5e1 !important;
+    background-color: #f8fafc !important;
+    padding: 8pt 10pt !important;
+    border-radius: 4pt !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print-badge-paid {
+    border: 1.5pt solid #059669 !important;
+    color: #047857 !important;
+    background-color: #ecfdf5 !important;
+    font-weight: 800 !important;
+    padding: 2pt 6pt !important;
+    border-radius: 3pt !important;
+    text-transform: uppercase !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  .print-badge-unpaid {
+    border: 1.5pt solid #dc2626 !important;
+    color: #b91c1c !important;
+    background-color: #fef2f2 !important;
+    font-weight: 800 !important;
+    padding: 2pt 6pt !important;
+    border-radius: 3pt !important;
+    text-transform: uppercase !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* Total Highlight Box */
+  .print-total-highlight {
+    background-color: #f8fafc !important;
+    border-top: 1.5pt solid #0f172a !important;
+    border-bottom: 2pt solid #0f172a !important;
+    padding: 4pt 0 !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+}
